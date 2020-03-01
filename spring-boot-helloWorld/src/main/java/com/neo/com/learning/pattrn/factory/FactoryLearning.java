@@ -1,5 +1,9 @@
 package com.neo.com.learning.pattrn.factory;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * 工厂模式
  * 分类：前两个严格来说不属于工厂模式
@@ -25,6 +29,20 @@ package com.neo.com.learning.pattrn.factory;
 public class FactoryLearning {
 
     public static void main(String[] args) {
+        String str = "/rhine2/contract/2020/aaa.pdf";
+        String[] split = str.split("/", -1);
+        System.out.println(split.length);
+        String dateStr = "2020-02-11";
+        String dateStr1 = "";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date parse = null;
+        try {
+            parse = sdf.parse(dateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        System.out.println(parse.equals(new Date()));
+
         //1.创建一辆车，并且可以跑
         Car c = new Car();
         c.go();
@@ -44,5 +62,8 @@ public class FactoryLearning {
         //步骤：创建交通工具的工厂---> 通过工厂创建对象----> 调用对象的go方法
         Moveable m1 = new CarFactory().createCar();//只需要修改carfactory为对应的交通工具工厂即可
         m1.go();
+
+
     }
 }
+

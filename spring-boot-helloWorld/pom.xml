@@ -34,13 +34,13 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-starter-web</artifactId>
-	    </dependency>
-	     <dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-devtools</artifactId>
-	        <optional>true</optional>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
 		</dependency>
 
 		<!-- mysql + mybatis -->
@@ -61,11 +61,42 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
+		<!--	redisson  redis分布式锁	-->
+		<!--		<dependency>-->
+		<!--			<groupId>org.redisson</groupId>-->
+		<!--			<artifactId>redisson</artifactId>-->
+		<!--			<version>3.8.2</version>-->
+		<!--		</dependency>-->
 
+		<!--	nacos	-->
+		<dependency>
+			<groupId>com.alibaba.boot</groupId>
+			<artifactId>nacos-config-spring-boot-starter</artifactId>
+			<version>0.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba.boot</groupId>
+			<artifactId>nacos-config-spring-boot-actuator</artifactId>
+			<version>0.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba.boot</groupId>
+			<artifactId>nacos-discovery-spring-boot-starter</artifactId>
+			<version>0.2.1</version>
+		</dependency>
+
+		<!--        lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.8</version>
+		</dependency>
 
 
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -77,6 +108,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 
 </project>
