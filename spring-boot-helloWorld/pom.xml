@@ -94,6 +94,12 @@
 			<version>1.16.8</version>
 		</dependency>
 
+		<!--		swagger -->
+		<dependency>
+			<groupId>net.bookrain</groupId>
+			<artifactId>swagger2</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 
 	</dependencies>
 

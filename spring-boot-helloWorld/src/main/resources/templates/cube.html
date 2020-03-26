@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		body{
+			background: yellow;
+		}
+		/*最外层样式*/
+			.wrap{
+				width: 300px;
+				height: 300px;
+				margin: 400px auto;
+				/*border: 1px solid red;*/
+				/*background: red;*/
+				position: relative;					
+			}
+			/*包裹所有容器的样式*/
+			.cube{
+				width: 300px;
+				height: 300px;
+				/*perspective: 500px;*/
+				/*保持3D效果*/
+				margin: 0 auto;
+				transform-style: preserve-3d;
+				transform: rotateX(-30deg) rotateY(-80deg);	
+				animation: rotate linear 10s infinite;	
+							
+			}
+				@-webkit-keyframes rotate{
+				from{
+					transform: rotateX(0deg) rotateY(0deg);
+				}
+				to{
+					transform: rotateX(360deg) rotateY(360deg);
+				}
+			}
+			.cube div{
+				position: absolute;
+				width: 300px;
+				height: 300px;
+				/*opacity: 0.8;*/
+				/*0.4秒*/
+				transition: all 0.4;
+			}
+			/*定义所有图片的样式*/
+			.pic{
+				width: 300px;
+				height: 300px;				
+			}									
+			.cube .Out_Left{
+				transform: rotateY(-90deg) translateZ(150px);
+			}
+			.cube .Out_Right{
+				transform: rotateY(90deg) translateZ(150PX);
+			}
+			.cube .Out_Top{
+				transform: rotateX(90deg) translateZ(150px);
+			}
+			.cube .Out_Bottom{
+				transform: rotateX(-90deg) translateZ(150px);
+			}
+			.cube .Out_Front{
+				transform: rotateY(0deg) translateZ(150px);
+			}
+			.cube .Out_Back{			
+				transform: translateZ(-150px) rotateY(180deg);
+			}
+		
+			/*定义小正方体的样式*/
+			.cube span{
+				display: block;
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 50px;
+				left: 50px;
+			}
+			
+		 	.cube .in_pic{
+				width: 200px;
+				height: 200px;
+			}
+																
+			.cube .In_Left{
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			.cube .In_Right{
+				transform: rotateY(90deg) translateZ(100PX);
+			}
+			.cube .In_Top{
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			.cube .In_Bottom{
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			.cube .In_Front{
+				transform: rotateY(0deg) translateZ(100px);
+			}
+			.cube .In_Back{			
+				transform: translateZ(-100PX) rotateY(180deg);
+			}
+			/* 鼠标移入后的样式*/
+			.cube:hover .Out_Left{
+				transform: rotateY(90deg) translateZ(-250px);
+			}
+			.cube:hover .Out_Right{
+				transform: rotateY(-90deg) translateZ(-250PX);
+			}
+			.cube:hover .Out_Top{
+				transform: rotateX(-90deg) translateZ(-250px);
+			}
+			.cube:hover .Out_Bottom{
+				transform: rotateX(90deg) translateZ(-250px);
+			}
+			.cube:hover .Out_Front{
+				transform: translateZ(250PX);
+			}
+			.cube:hover .Out_Back{
+				transform: translateZ(-250PX); 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="cube">
+				<!--外面前面的照片-->
+				<div class="Out_Front">
+					<img src="img/01.jpg" class="pic"/>
+				</div>				
+				<div class="Out_Back">
+					<img src="img/02.jpg"  class="pic"/>
+				</div>	
+				<div class="Out_Top">
+					<img src="img/03.jpeg"  class="pic"/>
+				</div>
+				<div class="Out_Bottom">
+					<img src="img/04.jpeg"  class="pic"/>
+				</div>
+				<div class="Out_Left">
+					<img src="img/05.jpeg"  class="pic"/>
+				</div>
+				<div class="Out_Right">
+					<img src="img/06.jpeg"  class="pic"/>
+				</div>
+				
+				<span class="In_Front">
+					<img src="img/07.jpeg" class="in_pic"/>					
+				</span>
+				<span class="In_Back">
+					<img src="img/08.jpeg" class="in_pic"/></span>
+				<span class="In_Top">
+					<img src="img/09.jpg" class="in_pic"/>					
+				</span>
+				<span class="In_Bottom">
+					<img src="img/10.jpg" class="in_pic"/>
+				</span>
+				<span  class="In_Left">
+					<img src="img/05.jpeg"  class="in_pic"/>
+				</span>
+				<span class="In_Right">
+					<img src="img/06.jpeg" class="in_pic"/>
+				</span>			
+			</div>			
+        </div>
+        
+        <script src='img/jquery-2.2.4.js'></script>
+        <script>
+            // (function(){
+
+            //         setTimeout(() => {
+            //             $(".cube .Out_Left").css({"transform":"rotateY(90deg) translateZ(-250px)"});
+            //             $(".cube .Out_Right").css({"transform": "rotateY(-90deg) translateZ(-250PX)"});
+            //             $(".cube .Out_Top").css({"transform": "rotateX(-90deg) translateZ(-250px)"});
+            //             $(".cube .Out_Bottom").css({"transform":"rotateX(90deg) translateZ(-250px)"});
+            //             $(".cube .Out_Front").css({"transform":"translateZ(250px)"});
+            //             $(".cube .translateZ").css({"transform":"translateZ(-250px)"});
+            //         }, 5000);
+                
+            // })(jQuery);
+        </script>
+	</body>
+</html>
+

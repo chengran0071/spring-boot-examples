@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan("com.neo.mapper")
 @SpringBootApplication
-@NacosPropertySource(dataId = "example", autoRefreshed = true)
+@NacosPropertySource(dataId = "chengran", autoRefreshed = true)
 @EnableNacosDiscovery
 public class Application {
 
